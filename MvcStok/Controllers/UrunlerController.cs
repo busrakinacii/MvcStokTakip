@@ -7,28 +7,28 @@ using System.Web.Mvc;
 
 namespace MvcStok.Controllers
 {
-    public class KategoriController : Controller
+    public class UrunlerController : Controller
     {
-        // GET: Kategori
+        // GET: Urunler
         MvcDbStokEntities db = new MvcDbStokEntities();
         public ActionResult Index()
         {
-            var deger = db.TBLKATEGORILER.ToList();
+            var deger = db.TBLURUNLER.ToList();
             return View(deger);
         }
-
         [HttpGet]
-        public ActionResult YeniKategori()
+        public ActionResult YeniUrun()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult YeniKategori(TBLKATEGORILER p1)
+        public ActionResult YeniUrun(TBLURUNLER urun)
         {
-            db.TBLKATEGORILER.Add(p1);
+            db.TBLURUNLER.Add(urun);
             db.SaveChanges();
             return View();
         }
+
     }
 }
