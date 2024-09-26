@@ -30,5 +30,14 @@ namespace MvcStok.Controllers
             db.SaveChanges();
             return View();
         }
+
+        public ActionResult Sil(int id)
+        {
+            var ktgrsil = db.TBLKATEGORILER.Find(id);
+            db.TBLKATEGORILER.Remove(ktgrsil);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
