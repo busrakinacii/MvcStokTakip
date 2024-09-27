@@ -1,0 +1,29 @@
+﻿@model MvcStok.Models.Entity.TBLMUSTERILER
+@{
+    ViewBag.Title = "MusteriGetir";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@*Guncell ActionResult Metodunun Adı
+    Musteriler Klasörümüzün Adı
+    Diğeride Formu Get Yada Post Metoduna Göre Çalıştırmak için*@
+
+@using (Html.BeginForm("Guncell", "Musteriler", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.MUSTERIID)
+        @Html.TextBoxFor(m => m.MUSTERIID, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.LabelFor(m => m.MUSTERIAD)
+        @Html.TextBoxFor(m => m.MUSTERIAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        @Html.LabelFor(m => m.MUSTERISOYAD)
+        @Html.TextBoxFor(m => m.MUSTERISOYAD, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-warning">Müşteri Güncelle</button>
+    </div>
+}
+
