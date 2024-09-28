@@ -11,7 +11,8 @@ namespace MvcStok.Models.Entity
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TBLMUSTERILER
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,6 +22,9 @@ namespace MvcStok.Models.Entity
         }
     
         public int MUSTERIID { get; set; }
+
+        [Required(ErrorMessage ="Lütfen Alaný Doldurunuz...")]
+        [StringLength(50,ErrorMessage ="50 Karakterden Uzun Olamaz!")]
         public string MUSTERIAD { get; set; }
         public string MUSTERISOYAD { get; set; }
     
