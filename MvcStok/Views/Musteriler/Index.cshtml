@@ -12,18 +12,20 @@
         <th>MÜŞTERİ SOYAD</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
+        <th>ALERT</th>
     </tr>
     <tbody>
-        @foreach(var musteri in Model)
-            {
-                <tr>
-                    <th>@musteri.MUSTERIID</th>
-                    <td>@musteri.MUSTERIAD</td>
-                    <td>@musteri.MUSTERISOYAD</td>
-                    <td><a href="/Musteriler/Sil/@musteri.MUSTERIID" class="btn btn-danger">SİL</a></td>
-                    <td><a href="/Musteriler/MusteriGetir/@musteri.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
-                </tr>
-            }
+        @foreach (var musteri in Model)
+        {
+            <tr>
+                <th>@musteri.MUSTERIID</th>
+                <td>@musteri.MUSTERIAD</td>
+                <td>@musteri.MUSTERISOYAD</td>
+                <td><a href="/Musteriler/Sil/@musteri.MUSTERIID" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Musteriler/MusteriGetir/@musteri.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
+                <td>@Html.ActionLink("Sil Butonu2", "SIL", new { a = musteri.MUSTERIID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek İstediğinize Emin Misini?')" })</td>
+            </tr>
+        }
     </tbody>
 </table>
 <a href="/Musteriler/YeniMusteri/" class="btn btn-primary">Yeni Müşteri Ekle</a>

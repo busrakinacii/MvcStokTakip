@@ -1,10 +1,20 @@
 ﻿@using MvcStok.Models.Entity;
-@model List<TBLKATEGORILER>
+@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<TBLKATEGORILER>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+
+@*Foreach Kullanımı
+        foreach (veri_türü degisken_ismi in dizi_ismi)
+    {
+
+     //degisken_ismi ekrana yazdırılır veya farklı bir işlem yapılır
+
+    }*@
 
 <table class="table table-bordered">
     <tr>
@@ -12,11 +22,11 @@
         <th>KATEGORI AD</th>
         <th>SİL</th>
         <th>GÜNCELLE</th>
-        
+
     </tr>
     <tbody>
-        @foreach(var ktgr in Model)
-            {
+        @foreach (var ktgr in Model)
+        {
             <tr>
                 @*<th>Kalın punto ile yazar</th>*@
                 <th>@ktgr.KATEGORIID</th>
@@ -25,10 +35,11 @@
                 <td><a href="/Kategori/KategoriGetir/@ktgr.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
             </tr>
 
-            }
+        }
     </tbody>
 </table>
 <a href="/Kategori/YeniKategori/" class="btn btn-primary">Yeni Kategori Ekle</a>
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
 
 @*<button class="btn btn-primary" onclick="/Kategori/YeniKategori/">Yeni Kategori Ekle</button>*@
 
