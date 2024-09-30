@@ -4,6 +4,15 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
+@*Birinci ActionResult'ın İsmi İkinci Action Result'ın bağlı olduğu controller,
+    Üçüncüsü ise Hangi Metotla Çalışacağını Belirlemek için Yazılır.*@
+@using (Html.BeginForm("Index", "Musteriler", FormMethod.Get))
+{
+    <p>
+        <b> Aranacak Müşteri Adı: </b> @Html.TextBox("p")
+        <input class="btn btn-info" type="submit" value="ARA" />
+    </p>
+}
 
 <table class="table table-bordered">
     <tr>

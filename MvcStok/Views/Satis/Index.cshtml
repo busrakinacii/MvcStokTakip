@@ -1,0 +1,64 @@
+﻿@model MvcStok.Models.Entity.TBLSATISLAR
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+@*<table class=" table table-bordered">
+        <tr>
+            <th>SATIŞ ID</th>
+            <th>ÜRÜN</th>
+            <th>MÜŞTERİ</th>
+            <th>ADET</th>
+            <th>FİYAT</th>
+        </tr>
+        <tbody>
+            @foreach (var satis in Model)
+            {
+                <tr>
+                    <th>@satis.SATISID</th>
+                    <td>@satis.URUN</td>
+                    <td>@satis.MUSTERI</td>
+                    <td>@satis.ADET</td>
+                    <td>@satis.FIYAT</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    SATIŞ YAP
+</button>
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Satış Ekranı</h2>
+            </div>
+            <form method="post" action="/Satis/YeniSatis">
+                <div class="modal-body">
+                    <label>Ürün Adı</label>
+                    @Html.TextBoxFor(m => m.URUN, new { @class = "form-control", @required = "required" })
+                    @*<input type="text" name="Urun" class="form-control" />*@
+                </div>
+                <div class="modal-body">
+                    <label>Müşteri Adı Soyadı</label>
+                    @Html.TextBoxFor(m => m.MUSTERI, new { @class = "form-control", @required = "required" })
+                </div>
+                <div class="modal-body">
+                    <label>Adet</label>
+                    @Html.TextBoxFor(m => m.ADET, new { @class = "form-control", @required = "required" })
+                </div>
+                <div class="modal-body">
+                    <label>Fiyat</label>
+                    @Html.TextBoxFor(m => m.FIYAT, new { @class = "form-control", @required = "required" })
+                </div>
+                <div class="modal-body">
+                    <button class="btn btn-info">Satış İşlemini Yap</button>
+                    <button class="btn btn-danger" data-dismiss="modal">Vazgeç</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</div>
