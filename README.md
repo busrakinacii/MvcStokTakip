@@ -1,5 +1,5 @@
-# MvcStok Projemizde Database üzerinden işlemlemler yapılmıştır.
-#Ürün Ekleme,Silme,Güncelleme gibi Diğer Sayfalarda da aynı işlemler mevcuttur.
+# MvcStok Projemizde Database üzerinden işlemler yapılmıştır.
+# Ürün Ekleme,Silme,Güncelleme gibi Diğer Sayfalarda da aynı işlemler mevcuttur.
 ![Ekran görüntüsü 2024-10-01 101307](https://github.com/user-attachments/assets/9b489581-4c50-48ed-8d88-716f1d8aba0c)
 
 ![Ekran görüntüsü 2024-10-01 101328](https://github.com/user-attachments/assets/60d1a3a0-943b-4c5c-b411-3ec319af3ac9)
